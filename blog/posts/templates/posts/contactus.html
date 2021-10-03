@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        a {
+            color: black;
+        }
+    </style>
+
+    <div class="col-7 offset-3 mb-5 mt-5">
+        <h5>Контакты</h5>
+        <div class="card-body">
+            <a href="tel:+99890***6368">Служба поддержки</a>
+            <br>
+            <a href="mailto:akbar220103@gmail.com">Почта</a>
+            <br>
+            <a href="https://goo.gl/maps/PZEz6irege52U5xe8">Адрес офиса</a>
+        </div>
+        <h5 class="card-title">Обратная связь</h5>
+        <div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <label for="name" class="col-md-2 col-form-label">Ваше
+                        имя</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="name" placeholder="Имя">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="exampleFormControlInput1" class="col-md-2 col-form-label">Электронная почта</label>
+                    <div class="col-md-10">
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                               placeholder="имя@пример.com">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="text" class="col-md-2 col-form-label">Письмо</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" id="text" name="text" rows="4"></textarea>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-info" style="float: right;"
+                       value="Submit Button">
+            </form>
+        </div>
+    </div>
+{% endblock content %}

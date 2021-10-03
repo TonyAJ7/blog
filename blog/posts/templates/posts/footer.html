@@ -1,0 +1,69 @@
+{% load static %}
+<footer class="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="logo">
+                    <h6 class="text-white">AJAX Blog</h6>
+                </div>
+                <div class="contact-details">
+                    <p>Сергели 5 Ташкент 100085</p>
+                    <p>Phone: +998 90 *** 63 68</p>
+                    <p>Email: <a href="mailto:djabbaroov@gmail.com">Написать письмо</a></p>
+                    <ul class="social-menu">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="menus d-flex">
+                    <ul class="list-unstyled">
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="{% url 'post-list' %}">Блог</a></li>
+                        <li><a href="{% url 'feedback' %}">Контакты и обратная связь</a></li>
+{#                        <li><a href="{% url 'search' %}">Поиск по сайту</a>#}
+                            <form action="{% url 'search' %}">
+                                <div class="form-group">
+                                    <input type="search" name="q" id="search" placeholder="Что вы ищете?">
+                                    <button type="submit" class="submit"><i class="icon-search-1"></i></button>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="menus d-flex">
+                    <ul class="list-unstyled">
+                        <li><a href="#">Мой профиль</a></li>
+                        {% if request.user.is_staff %}
+                            <li><a href="{% url 'post-create' %}">Создать блог</a></li>
+                        {% endif %}
+                        <li><a href="#">Конфиденциальность &amp; Политика</a></li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Наши партнеры</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Как добавить блог</a></li>
+                        <li><a href="{% url 'feedback' %}">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyrights">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2021. Все права защищены. <a
+                            href="mailto:akbar220103@gmail.com">AJAX|SINGLE</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

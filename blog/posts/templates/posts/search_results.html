@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="col-4 offset-1 mb-5 mt-5">
+        <h2>Результаты поиска</h2>
+        <br>
+        {% for post in queryset %}
+            <a style="display:block;" href="{{ post.get_absolute_url }}">{{ post.title }}
+                <div class="text-right"><span>{{ post.created_at|date:"M d, Y" }}</span></div>
+            </a>
+            <br>
+            <hr>
+        {% endfor %}
+    </div>
+{% endblock content %}
